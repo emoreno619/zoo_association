@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Lemme see your zoos!</h1>
+	<p>
+		<form action="/zoos/<%= zoo._id%>?_method=put" method="POST">
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" value= <%= zoo.name %>>
+		</div>
+		<div>
+			<label for="location">Location:</label>
+			<input type="text" location="location" id="location" value= <%= zoo.location %>>
+		</div>
+		</form>
+	</p>
+</body>
+</html>

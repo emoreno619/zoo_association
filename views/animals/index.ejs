@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1><%= zoo.name%>'s animals:</h1>
+  <% zoo.animals.forEach(function(animal){ %>
+    <p>
+      <a href="/zoos/<%= zoo._id%>/animals/<%= animal._id%>">More about this animal</a>
+      <%= animal.name%> <%= animal.species %> 
+      <img src="<%= animal.photo %>" alt="">
+    </p>
+  <% })%>
+  <a href="/zoos/<%= zoo.id%>/animals/new">Add a new one!</a>
+  <p>
+    <a href="/zoos/<%= zoo._id%>/edit">Edit this zoo</a>
+  </p>
+  <p>
+    <a href="/zoos">See all zoos</a>
+  </p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Lemme see your zoo's animals!</h1>
+	<p>
+		<a href="/zoos/<%= zoo._id%>/animals/new">Add a new animal</a>
+	</p>
+	<p>
+		<a href="/zoos/<%= zoo._id%>/edit">Edit this zoo</a>
+		<form action="/zoos/<%= zoo._id %>?_method=DELETE" method="POST">
+			<input type="submit" value="DELETE">
+		</form>
+	</p>
+	<p>
+		<a href="/zoos">See all zoos</a>
+	</p>
+	<p>
+		<h2><%= zoo.name %>'s animals: </h2>
+			<% animals.forEach(function(animal){ %>
+			<p>
+				<a href="/zoos/<%= zoo._id%>/animals/<%= animal.id %>">	<%= animal.name %> 	<%= animal.species %></a>
+				<img src="<%= animal.photo %>" alt="">
+			</p>
+			<% }) %>
+	</p>
+	
+</body>
+</html>

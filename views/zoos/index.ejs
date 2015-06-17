@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Lemme see your zoos!</h1>
+	<% zoos.forEach(function(zoo){ %>
+		<p>
+			<a href="/zoos/<%= zoo._id%>"><%= zoo.name %> 	<%= zoo.location %></a>
+		</p>
+	<% }) %>
+	<a href="/zoos/new">Add a new zoo!</a>
+</body>
+</html>
